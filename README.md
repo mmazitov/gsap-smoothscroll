@@ -15,7 +15,7 @@ This project is a web application that utilizes GSAP (GreenSock Animation Platfo
 ```
 Make sure you have the following tools installed:
 
-Node.js - v18.19.1 or higher (for running build tools if needed).
+Node.js - v18.18.0 or higher (for running build tools if needed).
 Sass (for compiling SCSS into CSS).
 
 # Clone this project
