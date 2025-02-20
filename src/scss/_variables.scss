@@ -1,0 +1,41 @@
+@use "./fonts" as *;
+
+/*
+	Updated SCSS variables file that includes:
+  - A color-scheme declaration to support both light and dark modes.
+  - A media query to automatically switch to dark theme variables when the user prefers dark mode.
+  - A manual override via the .dark-theme class.
+*/
+
+:root {
+	/* Light theme variables */
+	--color-primary: #fefefe;
+	--color-header: #f4efec;
+	--color-text: #cdc6c3;
+
+	/* Inform the browser that both light and dark color schemes are available */
+	color-scheme: light dark;
+}
+
+/* Automatically apply dark theme variables for users who prefer dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-primary: #8a4117;
+		--color-header: #a34d1b;
+		--color-text: #0a5c3d;
+	}
+}
+
+/* Option for a manual dark theme override */
+
+.dark-theme {
+	--color-primary: #8a4117;
+	--color-header: #a34d1b;
+	--color-text: #0a5c3d;
+}
+
+$index: calc(1vw + 1vh);
+$gallery-gap: calc($index * 7.5);
+
+$primary-font: raleway-font;
+$secondary-font: outfit-font;

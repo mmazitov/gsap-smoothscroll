@@ -1,0 +1,89 @@
+@use "./normalize&reset" as *;
+@use "./fonts" as *;
+@use "./functions" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./typography" as *;
+@use "./forms" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+}
+
+.content,
+.hero-section,
+.gallery__left,
+.gallery__right {
+	will-change: transform;
+}
+
+.hero-img {
+	position: absolute;
+	top: -5vh;
+	left: 37vw;
+	z-index: -1;
+	width: calc($index * 36);
+}
+
+.container {
+	position: relative;
+	padding: 0 7vw;
+}
+
+.main-header {
+	height: 100vh;
+}
+
+.main-title {
+	position: absolute;
+	bottom: 12vh;
+	width: min-content;
+	font-size: calc($index * 8);
+	line-height: 0.9;
+}
+
+.gallery__item {
+	max-width: calc($index * 21);
+	margin-bottom: $gallery-gap;
+	max-height: 180vh;
+	border-radius: 8px;
+}
+
+.gallery {
+	display: flex;
+	padding: calc($index * 8) 0;
+	&__left,
+	&__right {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__left {
+		margin-top: calc($gallery-gap * 1.75);
+	}
+	&__right {
+		.gallery__item {
+			margin: 0;
+			margin-top: $gallery-gap;
+		}
+	}
+}
+
+.text-block {
+	position: relative;
+	color: var(--color-text);
+	&__h {
+		font-size: 2rem;
+		line-height: 2.4rem;
+		color: var(--color-header);
+		margin-bottom: 1.5rem;
+	}
+	&__p {
+		line-height: 1.75;
+	}
+}
